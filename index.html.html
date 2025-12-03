@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Potluri Lalith Chandh — </title>
+  <meta name="description" content="Personal portfolio showcasing job interview achievements, projects, skills and certifications." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --accent-2:#06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --fw:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--fw);
+      background:linear-gradient(180deg,#061224 0%,#071126 50%,#071427 100%);
+      color:#e6eef8;
+      line-height:1.5;
+      scroll-behavior:smooth; /* Important for smooth scrolling */
+    }
+    a{text-decoration:none;color:inherit}
+
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* NAVBAR */
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:44px;height:44px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;font-weight:700;color:white;font-size:18px;
+      box-shadow:0 6px 18px rgba(124,58,237,0.18);
+    }
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600}
+    .nav-links a:hover{background:var(--glass);color:white}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:8px 14px;border-radius:10px;font-weight:700;color:white}
+    .mobile-toggle{display:none;background:transparent;border:none;color:white;font-size:22px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:40px}
+    .hero-card{padding:30px;border-radius:var(--radius);background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .name{font-size:32px;margin:0;font-weight:800}
+    .tagline{color:var(--muted);font-size:15px;margin-top:8px}
+    .hero-actions{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;border:1px solid transparent}
+    .btn-outline{background:transparent;border-color:rgba(255,255,255,0.08);color:var(--muted)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+
+    /* PROFILE PHOTO */
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .profile .photo{
+      width:220px;height:220px;border-radius:18px;overflow:hidden;
+      display:grid;place-items:center;
+      background:linear-gradient(180deg,#0b1220,#071228);
+      box-shadow:0 12px 30px rgba(2,6,23,0.6)
+    }
+    .profile img{width:100%;height:100%;object-fit:cover}
+    .highlight{padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.04);color:var(--muted);font-weight:700}
+
+    /* SECTIONS */
+    section{margin-top:40px}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .section-title h2{margin:0;font-size:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:.25s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.7)}
+
+    .muted{color:var(--muted);font-weight:600}
+
+    /* ACHIEVEMENTS */
+    .achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .ach-card{display:flex;gap:12px}
+    .ach-logo{
+      width:64px;height:64px;border-radius:12px;
+      display:grid;place-items:center;background:#7c3aed;color:white;font-weight:800
+    }
+    .ach-role{font-weight:700}
+    .stage{padding:6px 10px;background:rgba(255,255,255,0.04);
+      border-radius:999px;font-size:13px;color:var(--muted);font-weight:700}
+    .ach-desc{color:var(--muted);margin-top:8px}
+    .ach-date{color:var(--muted);font-size:13px}
+
+    @media(max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .mobile-toggle{display:block}
+      .achievements,.grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:560px){
+      .achievements,.grid-3{grid-template-columns:1fr}
+      .profile .photo{width:160px;height:160px}
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="brand">
+      <div class="logo">PLC</div>
+      <div>
+        <div style="font-weight:800">Potluri Lalith Chandh</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">CSE(HONORS)</div>
+      </div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#resume">Resume</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Interview Wins</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" id="downloadResume">Download Resume</a>
+    </div>
+
+    <button class="mobile-toggle" id="mobileToggle">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <p class="muted">Hello, I'm</p>
+      <h1 class="name">Lalith Chandh</h1>
+      <p class="tagline">Aspiring Software Engineer • Problem Solver • Open to Internships</p>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="scrollToSection('achievements')">View Interview Wins</button>
+        <button class="btn btn-outline" onclick="scrollToSection('contact')">Contact Me</button>
+      </div>
+    </div>
+
+    <aside class="profile">
+      <div class="photo">
+        <img src="potlurilalith.jpg" alt="Lalith Photo">
+      </div>
+
+      <div style="text-align:center">
+        <div class="highlight">Seeking: Internship / Full Time Job</div>
+        <div class="muted" style="margin-top:8px">B.Tech CSE(HONORS)</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="section-title"><h2>Resume Summary</h2></div>
+    <div class="card">
+      <ul class="muted" style="margin-left:18px">
+        <li>Strong in Data Structures & Algorithms</li>
+        <li>Experience in Full-Stack Web Apps</li>
+        <li>Real-world project deployments</li>
+        <li>Active participation in workshops</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title"><h2>Technical Skills</h2></div>
+    <div class="grid-3">
+      <div class="card"><strong>Cloud Computing</strong><p class="muted">AWS • GCP </p></div>
+      <div class="card"><strong>Web Development</strong><p class="muted">Node.js • HTML • CSS</p></div>
+      <div class="card"><strong>Tools</strong><p class="muted">Git • Docker </p></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="section-title"><h2>Certifications</h2></div>
+    <div class="grid-3">
+      <div class="card"><strong>Data Structures</strong><p class="muted">Arrays, Trees, Graphs & DP</p></div>
+      <div class="card"><strong>MERN Stack</strong><p class="muted">Fullstack projects deployed</p></div>
+      <div class="card"><strong>Cloud Basics</strong><p class="muted">Cloud fundamentals</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title"><h2>Projects</h2></div>
+    <div class="grid-3">
+      <div class="card"><strong>Online grocery store </strong><p class="muted">FrontEnd + Backend</p></div>
+      <div class="card"><strong>E-commerce Prototype</strong><p class="muted">FrontEnd + Backend</p></div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="section-title"><h2>Job Interview Achievements</h2></div>
+    <div class="achievements" id="achList"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title"><h2>Contact</h2></div>
+    <div class="grid-2">
+      <div class="card">
+        <strong>Get in Touch</strong>
+        <p class="muted">Email: potlurilalith11@gmail.com</p>
+        <p class="muted">Phone: +91 9885533007</p>
+      </div>
+
+      <div class="card">
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <label class="muted">Message</label>
+          <textarea id="msg" required rows="4" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.08);color:inherit"></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <input id="name" type="text" required placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.08);color:inherit">
+            <input id="email" type="email" required placeholder="Your email" style="flex:1;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.08);color:inherit">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top:12px;float:right">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer style="text-align:center;color:var(--muted);margin-top:50px">
+    © Potluri Lalith — Portfolio
+  </footer>
+
+</div>
+
+<script>
+/* ACHIEVEMENTS DATA */
+const achievements = [
+  {company:'SDRB TECHNOLOGIES',role:'Intern',stage:'Web developer',date:'01/06/2025',desc:'Full Stack Web Development'},
+  ];
+
+const achList=document.getElementById("achList");
+
+function companyLogoSVG(name){
+  const initials=name.split(" ").map(x=>x[0]).join("").toUpperCase();
+  return `<div class="ach-logo">${initials}</div>`;
+}
+
+function renderAchievements(){
+  achList.innerHTML="";
+  achievements.forEach(a=>{
+    achList.innerHTML+=`
+      <div class="card ach-card">
+        ${companyLogoSVG(a.company)}
+        <div>
+          <div style="display:flex;justify-content:space-between">
+            <div>
+              <div class="ach-role">${a.role} <span style="color:var(--muted)">@ ${a.company}</span></div>
+              <div class="ach-date">${new Date(a.date).toLocaleDateString()}</div>
+            </div>
+            <div class="stage">${a.stage}</div>
+          </div>
+          <div class="ach-desc">${a.desc}</div>
+        </div>
+      </div>`;
+  });
+}
+
+renderAchievements();
+
+/* CONTACT FORM */
+function submitContact(e){
+  e.preventDefault();
+  alert("Message sent successfully! Thank you.");
+  e.target.reset();
+}
+
+/* MOBILE NAV */
+const mobileToggle=document.getElementById("mobileToggle");
+const navLinks=document.getElementById("navLinks");
+
+mobileToggle.onclick=()=>{
+  const open=navLinks.style.display==="flex";
+  navLinks.style.display=open?"none":"flex";
+  navLinks.style.flexDirection="column";
+  navLinks.style.position="absolute";
+  navLinks.style.top="60px";
+  navLinks.style.right="20px";
+};
+
+/* FIXED SMOOTH SCROLL FUNCTION */
+function scrollToSection(id){
+  const el=document.getElementById(id);
+  if(el){
+    el.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+}
+
+document.getElementById("downloadResume").onclick=()=>{
+  alert("Resume download placeholder — replace with your actual PDF file.");
+};
+</script>
+
+</body>
+</html>
